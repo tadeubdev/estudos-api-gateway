@@ -1,4 +1,7 @@
+
 # Estudo de API Gateway
+
+![Diagrama de arquitetura](https://github.com/tadeubdev/estudos-api-gateway/raw/main/diagram.png)
 
 Este projeto foi criado com o objetivo de estudar conceitos de API Gateway, autenticação e autorização utilizando Keycloak, além de práticas com Docker e Nginx como reverse proxy.
 
