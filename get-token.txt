@@ -1,0 +1,18 @@
+curl -X POST "http://localhost:8081/realms/demo/protocol/openid-connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=password" \
+  -d "client_id=node-api" \
+  -d "client_secret=F94iGhOxKrXps2ctdYDugg69S3mQSpY6" \
+  -d "username=tadeu" \
+  -d "password=Teste123\!"
+
+TOKEN=$(curl -s -X POST "http://localhost:8081/realms/demo/protocol/openid-connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=password" \
+  -d "client_id=node-api" \
+  -d "client_secret=F94iGhOxKrXps2ctdYDugg69S3mQSpY6" \
+  -d "username=tadeu" \
+  -d "password=Teste123\!" | jq -r .access_token)
+echo $TOKEN
+
+curl -H "Authorization: Bearer $TOKEN" http://localhost:8080/api/hello
